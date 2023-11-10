@@ -111,6 +111,35 @@ main {
     margin-bottom: 15px; /* Espacio debajo del título */
     font-size: 1.5rem; /* Tamaño de fuente más grande para el título */
 }
+.date-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.date-selector select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.download-report {
+    background-color: #ff7f00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-report:hover {
+    background-color: #e76e00;
+}
 
 /* Estilos para formularios y entradas */
 .form-container form {
@@ -175,76 +204,137 @@ main {
   transition: background-color 0.2s ease-in-out;
 }
 
-#runt-info-container {
-  width: 100%;
-  display: none; /* Oculto por defecto */
-  margin-top: 20px; /* Añade más espacio en la parte superior */
+.runt-info-container {
+    background-color: #333; /* Fondo oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+        width: 100%;
+    overflow-y: auto;
+    max-height: 300px;
 }
 
 .contract-info {
-  position: relative;
-    z-index: 4;
-  background-color: #232323;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column; /* Cambia a flex-direction: column */
-  align-items: flex-start; /* Alinea los detalles a la izquierda */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #2e2e2e;
+    color: #fff;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contract-header {
+    padding: 10px;
+    background-color: #252525; /* Fondo ligeramente más oscuro para el encabezado */
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contract-header p {
+    margin: 0;
+    font-weight: bold;
 }
 
 .status-icon {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 .green-check {
-  color: green;
+    color: #4CAF50;
 }
 
 .red-x {
-  color: red;
+    color: #F44336;
 }
 
 .contract-details {
-  background-color: #232323;
-  color: white;
-  border: 1px solid white;
-  padding: 10px;
-  margin: 10px auto; /* Agregar margen a la derecha, izquierda y arriba, centrar horizontalmente */
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, display 0s ease 0.3s;
-  max-height: 0;
-  width: 90%; /* Reducir el ancho al 90% */
-  max-width: 600px; /* Establecer un ancho máximo */
+    padding: 10px;
+    display: none; /* Oculto inicialmente */
 }
 
-.contract-details.expanded {
-  max-height: 500px; /* Altura máxima cuando está expandido */
-}
-.contract-details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  display: block; /* Cambia a display: block */
+.contract-details p {
+    margin: 5px 0;
 }
 
-.contract-details tr {
-  display: block; /* Cambia a display: block */
-  margin-bottom: 10px; /* Espaciado entre filas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
-.contract-details th,
-.contract-details td {
-  border: 1px solid #fff;
-  padding: 10px;
-  text-align: left;
-  width: 100%; /* Ajusta el ancho al 100% para ocupar todo el contenedor */
+th, td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
 }
 
-.contract-details td[contenteditable="true"]:focus {
-  background-color: #333; /* Fondo más oscuro al editar */
-  outline: none; /* Sin contorno al enfocar */
+th {
+    background-color: #252525; /* Fondo oscuro para encabezados */
+}
+
+td {
+    background-color: #333; /* Fondo para celdas */
+}
+
+/* Estilos para botones */
+button {
+    background-color: #ff7f00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e76e00;
+}
+
+/* Estilos para selectores de fecha y botón de descarga */
+.date-selector {
+    display: flex;
+    justify-content: flex-start; /* Alineación a la derecha */
+    margin-bottom: 15px;
+}
+
+.date-field {
+    display: flex;
+    flex-direction: column; /* Alineación vertical */
+    margin-left: 10px; /* Espacio entre mes y año */
+}
+
+.date-field label {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.date-selector select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.download-report {
+    background-color: #ff7f00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Ocupa todo el ancho disponible */
+    margin-top: 10px;
+    width: 40%; /* Asegura que el botón ocupe todo el ancho */
+}
+
+.download-report:hover {
+    background-color: #e76e00;
 }
 
 footer {

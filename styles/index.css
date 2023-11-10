@@ -38,7 +38,7 @@ body, html {
   }
   
   nav a:hover {
-    background-color: #ffffff;
+    background-color: #ff7f00;
     color: #000000;
   }
   
@@ -97,6 +97,7 @@ body, html {
 
 .card-front, .card-back {
     position: absolute;
+    cursor: pointer;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;

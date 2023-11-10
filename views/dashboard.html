@@ -1,97 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Firma Cloud</title>
-<link rel="stylesheet" href="/styles/dashboard.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Firma Cloud</title>
+    <link rel="stylesheet" href="/styles/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <a href="#">Inicio</a>
+          <!-- Agregar más enlaces de navegación aquí si es necesario -->
+          <div class="user-session">
+            <a href="./perfil.html">Gabriel Díaz</a>
+            <a href="./index.html">Cerrar Sesión</a>
+          </div>
+        </div>
+      </nav>
 
-<header>
-  <nav>
-    <div class="nav-container">
-      <a href="#">Inicio</a>
-      <div class="user-session">
-        <a href="./perfil.html">Gabriel Díaz</a>
-        <a href="./index.html">Cerrar Sesión</a>
+      <section class="presentation-section">
+        <h1>Bienvenido a su perfil Firmaya Cloud!!</h1>
+        <p>Aquí ya murió mi creatividad ayuda dani xD</p>
+      </section>
+    </header>
+
+    <main class="services-container">
+      <div class="card-container">
+        <div class="service-card" id="geologico-card">
+          <h3>Geologico</h3>
+          <div class="form-container" id="geologico-form">
+            <form
+              id="user-form"
+              onsubmit="saveToLocalStorage(event)"
+              onclick="event.stopPropagation()"
+            >
+              <input
+                type="text"
+                id="nit"
+                name="nit"
+                placeholder="Ingrese el NIT"
+                required
+              />
+              <input
+                type="text"
+                id="razon-social"
+                name="razon_social"
+                placeholder="Ingrese la Razón Social"
+                required
+              />
+              <button type="submit">Crear usuario</button>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
 
-  <section class="presentation-section">
-    <h1>Bienvenido a su perfil Firmaya Cloud!!</h1>
-    <p>Aquí ya murió mi creatividad ayuda dani xD</p>
-  </section>
-</header>
-
-  <main class="services-container">
-    <div class="card-container">
-    <div class="service-card" id="geologico-card">
-      <h3>Geologico</h3>
-      <div class="form-container" id="geologico-form">
-        <form id="user-form" onsubmit="saveToLocalStorage(event)">
-  <input type="text" id="nit" name="nit" placeholder="Ingrese el NIT" required>
-  <input type="text" id="razon-social" name="razon_social" placeholder="Ingrese la Razón Social" required>
-  <button type="submit">Crear usuario</button>
-</form>
-
+      <div class="card-container">
+        <div class="service-card">
+          <h3>Ugpp</h3>
+          <!-- Contenido de Ugpp aquí -->
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="card-container">
-    <div class="service-card">
-      <h3>Ugpp</h3>
-      <!-- Contenido de Ugpp aquí -->
-    </div>
-  </div>
+      <div class="card-container">
+        <div class="service-card" id="runt-card">
+          <h3>Runt</h3>
+          <div id="runt-info-container">
+            <div class="contract-info" id="contract-2023001">
+              <div class="contract-header" onclick="toggleDetails(this)">
+                <p>Contrato 2023001</p>
+                <span class="status-icon green-check">✓</span>
+              </div>
+              <div class="contract-details">
+                <p>Nombre: runt2023-11</p>
+                <p>Vigencia: 01-01-2025</p>
+                <table>
+                  <tr>
+                    <th>Servicios</th>
+                    <th>Cantidad</th>
+                  </tr>
+                  <tr>
+                    <td>Padres</td>
+                    <td contenteditable="true">1000</td>
+                  </tr>
+                  <tr>
+                    <td>Otp</td>
+                    <td contenteditable="true">500</td>
+                  </tr>
+                </table>
+                <button
+                  onclick="event.stopPropagation(); saveDetails('contract-2023001')"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
 
-  <div class="card-container">
-    <div class="service-card" id="runt-card">
-  <h3>Runt</h3>
-  <div id="runt-info-container">
-    <div class="contract-info" id="contract-2023001" onclick="toggleDetails(this)">
-      <p>Contrato 2023001</p>
-      <span class="status-icon green-check">✓</span>
-      <div class="contract-details" onclick="event.stopPropagation();">
-        <p>Nombre: runt2023-11</p>
-        <p>Vigencia: 01-01-2025</p>
-        <table>
-          <tr>
-            <th>Servicios</th>
-            <th>Cantidad</th>
-          </tr>
-          <tr>
-            <td>Padres</td>
-            <td contenteditable="true">1000</td>
-          </tr>
-          <tr>
-            <td>Otp</td>
-            <td contenteditable="true">500</td>
-          </tr>
-        </table>
-        <button onclick="event.stopPropagation(); saveDetails('contract-2023001')">Guardar</button>
+            <div class="contract-info" id="contract-2022001">
+              <div class="contract-header" onclick="toggleDetails(this)">
+                <p>Contrato 2022001</p>
+                <span class="status-icon red-x">✗</span>
+              </div>
+              <div class="contract-details">
+                <p>Nombre: runt2023-11</p>
+                <p>Vigencia: 01-01-2025</p>
+                <table>
+                  <tr>
+                    <th>Servicios</th>
+                    <th>Cantidad</th>
+                  </tr>
+                  <tr>
+                    <td>Pades</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                  <tr>
+                    <td>Otp</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                </table>
+                <button
+                  onclick="event.stopPropagation(); saveDetails('contract-2023001')"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+
+            <div class="contract-info" id="contract-20221001">
+              <div class="contract-header" onclick="toggleDetails(this)">
+                <p>Contrato 20221001</p>
+                <span class="status-icon red-x">✗</span>
+              </div>
+              <div class="contract-details">
+                <p>Nombre: runt2023-11</p>
+                <p>Vigencia: 01-01-2025</p>
+                <table>
+                  <tr>
+                    <th>Servicios</th>
+                    <th>Cantidad</th>
+                  </tr>
+                  <tr>
+                    <td>Pades</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                  <tr>
+                    <td>Otp</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                </table>
+                <button
+                  onclick="event.stopPropagation(); saveDetails('contract-2023001')"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+
+            <div class="contract-info" id="contract-2020200">
+              <div class="contract-header" onclick="toggleDetails(this)">
+                <p>Contrato 2020200</p>
+                <span class="status-icon red-x">✗</span>
+              </div>
+              <div class="contract-details">
+                <p>Nombre: runt2023-11</p>
+                <p>Vigencia: 01-01-2025</p>
+                <table>
+                  <tr>
+                    <th>Servicios</th>
+                    <th>Cantidad</th>
+                  </tr>
+                  <tr>
+                    <td>Pades</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                  <tr>
+                    <td>Otp</td>
+                    <td contenteditable="true">0</td>
+                  </tr>
+                </table>
+                <button
+                  onclick="event.stopPropagation(); saveDetails('contract-2023001')"
+                >
+                  Guardar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="contract-info" id="contract-2022001">
-      <p>Contrato 2022001</p>
-      <span class="status-icon red-x">✗</span>
-    </div>
-    <div class="contract-info" id="contract-20221001">
-      <p>Contrato 20221001</p>
-      <span class="status-icon red-x">✗</span>
-    </div>
-    <div class="contract-info" id="contract-2020200">
-      <p>Contrato 2020200</p>
-      <span class="status-icon red-x">✗</span>
-    </div>
-  </div>
-</div>
-  </div>
-  </main>
-
-</body>
-<script src="/scripts/dashboard.js"></script>
+    </main>
+  </body>
+  <script src="/scripts/dashboard.js"></script>
 </html>

@@ -37,13 +37,13 @@ nav a {
     border-radius: 20px;
 }
 
-nav a:hover {
+nav .links:hover {
     background-color: #ff7f00;
     color: #000000;
 }
  /* Estilos para la sección de presentación */
 .presentation-section {
-    background: linear-gradient(to right, #1C1C1C 30%, #ff7f00 300%);
+    background: linear-gradient(to right, #1C1C1C 30%, #ff7f00 400%);
     color: white;
     padding: 100px 20px;
     text-align: center;

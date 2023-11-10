@@ -37,7 +37,7 @@ nav a {
   border-radius: 20px;
 }
 
-nav a:hover {
+nav .links:hover {
   background-color: #cc5200;
   color: #000000;
 }
@@ -100,6 +100,7 @@ main {
     color: #fff;
     padding: 20px;
     border-radius: 10px;
+    cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
     display: flex;
     flex-direction: column; /* Organiza el contenido verticalmente */

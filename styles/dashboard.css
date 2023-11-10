@@ -74,45 +74,75 @@ main {
   margin: auto;
 }
 
+.nav-logo img {
+  width: 200px; /* Ajuste en el tamaño del logo */
+  margin: auto; /* Centra el logo horizontalmente */
+      margin-left: 25%;
+
+}
+
 .services-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 20px;
-  margin: 0 20px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas */
+    padding: 40px 20px;
+    min-height: 300px;
 }
 
 .card-container {
-  flex: 1;
-  margin: 10px;
-  min-height: 100px;
+    margin: 10px;
+    flex-basis: calc(33% - 20px); /* Ajusta el ancho de las tarjetas */
+    box-sizing: border-box;
 }
 
 .service-card {
-  background-color: #232323;
-  color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
+    background-color: #292929; /* Fondo más claro */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
 }
 
 .service-card h3 {
-  margin: 0;
-  font-size: 1.5em;
-  margin-bottom: 20px;
+    margin-bottom: 15px; /* Espacio debajo del título */
+    font-size: 1.5rem; /* Tamaño de fuente más grande para el título */
 }
 
-.form-container,
+/* Estilos para formularios y entradas */
+.form-container form {
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container input {
+    width: 90%; /* Ancho relativo para los campos de entrada */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #222;
+    color: #ddd;
+    font-size: 1rem;
+}
+
+.form-container button {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff7f00; /* Color naranja */
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
 .contract-details {
+  z-index: 4;
   display: none; /* Oculto por defecto */
   overflow: hidden;
   transition: max-height 0.3s ease-out, display 0s ease 0.3s;
@@ -145,11 +175,14 @@ main {
 }
 
 #runt-info-container {
+  width: 100%;
   display: none; /* Oculto por defecto */
   margin-top: 20px; /* Añade más espacio en la parte superior */
 }
 
 .contract-info {
+  position: relative;
+    z-index: 4;
   background-color: #232323;
   padding: 10px;
   margin-bottom: 10px;
@@ -213,6 +246,67 @@ main {
   outline: none; /* Sin contorno al enfocar */
 }
 
+footer {
+  background-color: #161616; /* Manteniendo el color de fondo */
+  color: #fff;
+  padding: 5px 25px; /* Ajuste en el padding para un diseño más espacioso */
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Alineación para que todas las secciones tengan la misma altura */
+  flex-wrap: wrap;
+  /* Max-width para contener mejor los elementos */
+  margin: auto; /* Centrar el contenedor */
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px; /* Margen reducido para un mejor uso del espacio */
+  padding: 10px; /* Padding aumentado para una mejor estética */
+  display: flex;
+  flex-direction: column; /* Hace que el contenido de cada sección se distribuya verticalmente */
+  justify-content: space-between; /* Distribuye el espacio de manera uniforme */
+  border-radius: 10px; /* Bordes redondeados */
+  background: #161616; /* Fondo sutil para cada sección */
+}
+
+.footer-section h4 {
+  color: #ff7f00; /* Color naranja para títulos, igual al botón de inicio de sesión */
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-section p {
+  line-height: 1;
+  font-size: 0.95em;
+}
+
+.footer-logo {
+  flex-basis: 100%; /* Toma todo el ancho en móviles */
+  margin: 20px 0; /* Margen para separarlo de las otras secciones */
+  text-align: center; /* Centra el contenido */
+}
+
+.footer-logo img {
+  width: 200px; /* Ajuste en el tamaño del logo */
+  margin: auto; /* Centra el logo horizontalmente */
+}
+
+.footer-bottom {
+  border-top: 1px solid #444; /* Borde más sutil */
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85em;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -234,4 +328,15 @@ main {
     width: 90%;
     margin: 10px 0;
   }
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-logo {
+    flex-basis: auto; /* Restablece el ancho del logo */
+    order: -1; /* Coloca el logo en la parte superior */
+  }
+  
+    .footer-logo img {
+      margin-bottom: 20px;
+    }
 }

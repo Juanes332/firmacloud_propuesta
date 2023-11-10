@@ -2,95 +2,108 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #1C1C1C; /* Fondo negro */
+    background-color: #1C1C1C; /* Manteniendo el fondo negro */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    color: #fff; /* Texto blanco para contraste */
-  }
-  
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-form {
-    padding: 3em; /* Aumento del relleno */
-    border-radius: 10px; /* Bordes ligeramente más redondeados */
+    color: #fff; /* Manteniendo el texto blanco */
+}
+
+.login-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    border-radius: 15px; /* Bordes más redondeados */
+}
+
+.login-form {
+    padding: 3em; 
+    border-radius: 10px; /* Bordes aún más redondeados */
     width: 100%;
-    max-width: 400px; /* Ancho máximo más grande para el formulario */
-  }
-  
-  .login-logo {
-    width: 150px; /* Tamaño del logo aumentado */
+    max-width: 400px; 
+    background: linear-gradient(145deg, #232323, #1a1a1a); /* Fondo con gradiente sutil */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+.login-logo {
+    width: 150px;
     margin-bottom: 2rem;
-  }
-  
-  h2 {
-    font-size: 2rem; /* Tamaño de fuente más grande para el título */
+    display: block; /* Hace que el logo sea un bloque, permitiendo centrarlo */
+    margin-left: auto; /* Margen automático a la izquierda */
+    margin-right: auto; /* Margen automático a la derecha */
+}
+
+h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
-  }
-  
-  p {
-    font-size: 1.25rem; /* Tamaño de fuente más grande para el párrafo */
+    text-align: center; /* Centrar título */
+}
+
+p {
+    font-size: 1.25rem;
     margin-bottom: 2rem;
-  }
-  
-  .input-container {
+    text-align: center; /* Centrar párrafo */
+}
+
+.input-container {
     margin-bottom: 1.5rem;
-  }
-  
-  .login-form input {
+}
+
+.login-form input {
     width: 100%;
     padding: 15px; 
-    margin-bottom: 1.5rem;
-    border: 1px solid #555;
-    background-color: #222;
+    border: none; /* Eliminar bordes */
+    background-color: #222; /* Manteniendo el color de fondo */
     border-radius: 5px;
     color: #ddd;
     font-size: 1rem;
-  }
-  
-  .login-form button {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.login-form input:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Cambio al enfocar */
+    outline: none; /* Eliminar el resaltado por defecto */
+}
+
+.login-form button {
     width: 100%;
-    padding: 15px; 
+    padding: 15px;
     border-radius: 5px;
-    background-color: #ff7f00;
+    background-color: #ff7f00; /* Manteniendo el color naranja */
     color: white;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem; 
+    font-size: 1rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .login-form button:hover {
-    background-color: #e76e00;
-  }
-  
-  .login-links a {
+    border: none; /* Eliminar bordes */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.login-form button:hover {
+    background-color: #e76e00; /* Manteniendo el efecto hover */
+}
+
+.login-links a {
     display: block;
     margin-top: 1.5rem;
-    color: #ff7f00;
+    color: #ff7f00; /* Manteniendo el color del enlace */
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 0.9rem;
-  }
-  
-  .login-links a:hover {
+    text-align: center; /* Centrar enlaces */
+}
+
+.login-links a:hover {
     color: #ffa500;
     text-decoration: underline;
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .login-form {
       padding: 1.5em;
-      max-width: 90%; 
+      max-width: 90%;
     }
   
     .login-form input, .login-form button {
-      padding: 12px; 
+      padding: 12px;
     }
-  }
-  
+}
